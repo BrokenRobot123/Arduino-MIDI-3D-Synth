@@ -1,0 +1,19 @@
+#include <MIDI.h>
+
+int noteValue;
+int octivePin = A0;
+int velocityPin = A1;
+int noteOnPin = A2;
+int noteOffPin = A3;
+int shapePin = A4;
+
+void setup(){
+  MIDI.begin();
+  Serial.begin(31250);
+}
+
+void loop(){
+  int octave = map(octivePin, 0, 1023, 0, 10);
+  switch(octave){
+    case 0:
+      
